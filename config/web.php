@@ -4,7 +4,7 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id'         => 'basic',
+    'id'         => 'Test Yii',
     'basePath'   => dirname(__DIR__),
     'bootstrap'  => ['log'],
     'aliases'    => [
@@ -48,6 +48,15 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName'  => false,
             'rules'           => [
+            ],
+        ],
+        'view'         => [
+            'theme' => [
+                'basePath' => '@app/themes/basic',
+                'baseUrl'  => '@web/themes/basic',
+                'pathMap'  => [
+                    '@app/views' => '@app/themes/basic',
+                ],
             ],
         ],
 

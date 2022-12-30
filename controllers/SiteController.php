@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Country;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -128,6 +129,7 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+
     }
 
 
@@ -150,6 +152,22 @@ class SiteController extends Controller
         {
 
             return $this->render('test-html', ['model' => $model]);
+        }
+    }
+    public function actionCountry()
+    {
+        $model = new Country();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate())
+        {
+
+
+            return $this->render('country-confirm', ['model' => $model]);
+        }
+        else
+        {
+
+            return $this->render('country', ['model' => $model]);
         }
     }
 }
