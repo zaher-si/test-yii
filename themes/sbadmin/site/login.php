@@ -1,6 +1,7 @@
 <?php
 /** @var yii\web\View $this */
 use app\assets\SbAdminAsset;
+use yii\helpers\Url;
 
 SbAdminAsset::register($this);
 ?>
@@ -38,23 +39,24 @@ SbAdminAsset::register($this);
                                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                                         </div>
                                     </div>
-                                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                    <a href="<?= Yii::$app->homeUrl ?>" class="btn btn-primary btn-user btn-block">
                                         Login
                                     </a>
                                     <hr>
-                                    <a href="index.html" class="btn btn-google btn-user btn-block">
+                                    <a href="<?= Yii::$app->homeUrl ?>" class="btn btn-google btn-user btn-block">
                                         <i class="fab fa-google fa-fw"></i> Login with Google
                                     </a>
-                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                    <a href="<?= Yii::$app->homeUrl ?>" class="btn btn-facebook btn-user btn-block">
                                         <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                     </a>
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                    <a class="small" href="<? Url::toRoute('site/forgot-password') ?>">Forgot
+                                        Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.html">Create an Account!</a>
+                                    <a class="small" href="<? Url::toRoute('site/register') ?>">Create an Account!</a>
                                 </div>
                             </div>
                         </div>
