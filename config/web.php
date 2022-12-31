@@ -52,10 +52,10 @@ $config = [
         ],
         'view'         => [
             'theme' => [
-                'basePath' => '@app/themes/basic',
-                'baseUrl'  => '@web/themes/basic',
+                'basePath' => '@app/themes/sbadmin',
+                'baseUrl'  => '@web/themes/sbadmin',
                 'pathMap'  => [
-                    '@app/views' => '@app/themes/basic',
+                    '@app/views' => '@app/themes/sbadmin',
                 ],
             ],
         ],
