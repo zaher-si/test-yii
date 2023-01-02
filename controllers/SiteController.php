@@ -87,7 +87,9 @@ class SiteController extends Controller
     }
     public function actionUtilitiesAnimation()
     {
+        // $this->layout = 'sdasd';
         return $this->render('utilities-animation');
+
     }
     public function actionUtilitiesBorder()
     {

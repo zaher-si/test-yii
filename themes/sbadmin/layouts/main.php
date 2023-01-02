@@ -69,11 +69,15 @@ SbAdminAsset::register($this);
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Components</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo"
+                    class="collapse <?=(Yii::$app->controller->route == 'site/buttons' || Yii::$app->controller->route == 'site/cards') ? 'show' : '' ?>"
+                    aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/buttons') ?>">Buttons</a>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/cards') ?>">Cards</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/buttons') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('site/buttons') ?>">Buttons</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/cards') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('site/cards') ?>">Cards</a>
                     </div>
                 </div>
             </li>
@@ -85,11 +89,13 @@ SbAdminAsset::register($this);
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Utilities</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapseUtilities"
+                    class="collapse <?=(Yii::$app->controller->route == 'site/utilities-color' || Yii::$app->controller->route == 'site/utilities-border' || Yii::$app->controller->route == 'utilities-animation' || Yii::$app->controller->route == 'site/utilities-other') ? 'show' : '' ?>"
+                    aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/utilities-color') ?>">Colors</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/utilities-color') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('site/utilities-color') ?>">Colors</a>
                         <a class="collapse-item" href="<?= Url::toRoute('site/utilities-border') ?>">Borders</a>
                         <a class="collapse-item" href="<?= Url::toRoute('site/utilities-animation') ?>">Animations</a>
                         <a class="collapse-item" href="<?= Url::toRoute('site/utilities-other') ?>">Other</a>
