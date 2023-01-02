@@ -90,15 +90,18 @@ SbAdminAsset::register($this);
                     <span>Utilities</span>
                 </a>
                 <div id="collapseUtilities"
-                    class="collapse <?=(Yii::$app->controller->route == 'site/utilities-color' || Yii::$app->controller->route == 'site/utilities-border' || Yii::$app->controller->route == 'utilities-animation' || Yii::$app->controller->route == 'site/utilities-other') ? 'show' : '' ?>"
+                    class="collapse <?=(Yii::$app->controller->route == 'site/utilities-color' || Yii::$app->controller->route == 'site/utilities-border' || Yii::$app->controller->route == 'site/utilities-animation' || Yii::$app->controller->route == 'site/utilities-other') ? 'show' : '' ?>"
                     aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Utilities:</h6>
                         <a class="collapse-item <?=(Yii::$app->controller->route == 'site/utilities-color') ? 'active' : '' ?>"
                             href="<?= Url::toRoute('site/utilities-color') ?>">Colors</a>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/utilities-border') ?>">Borders</a>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/utilities-animation') ?>">Animations</a>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/utilities-other') ?>">Other</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/utilities-border') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('site/utilities-border') ?>">Borders</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/utilities-animation') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('site/utilities-animation') ?>">Animations</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/utilities-other') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('site/utilities-other') ?>">Other</a>
                     </div>
                 </div>
             </li>
