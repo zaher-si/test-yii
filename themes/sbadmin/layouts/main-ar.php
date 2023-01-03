@@ -3,19 +3,18 @@
 /** @var yii\web\View $this */
 /** @var string $content */
 
-use app\assets\SbAdminAsset;
+use app\assets\SbAdminAssetAr;
 use yii\helpers\Url;
-use app\widgets\Alert;
-use yii\bootstrap4\Breadcrumbs;
+
 use yii\bootstrap4\Html;
 use yii\bootstrap4\ButtonDropdown;
-use yii\bootstrap4\NavBar;
 
-SbAdminAsset::register($this);
+
+SbAdminAssetAr::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>" class="h-100">
+<html lang="ar" dir="rtl" class="h-100">
 
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
@@ -51,7 +50,7 @@ SbAdminAsset::register($this);
             <li class="nav-item active">
                 <a class="nav-link" href="<?= Yii::$app->homeUrl ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>اللوحة الرئيسية</span></a>
             </li>
 
             <!-- Divider -->
@@ -59,7 +58,7 @@ SbAdminAsset::register($this);
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                الواجهة
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -67,13 +66,13 @@ SbAdminAsset::register($this);
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>المكونات</span>
                 </a>
                 <div id="collapseTwo"
                     class="collapse <?=(Yii::$app->controller->route == 'site/buttons' || Yii::$app->controller->route == 'site/cards') ? 'show' : '' ?>"
                     aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
+                        <h6 class="collapse-header">مكونات مخصصة:</h6>
                         <a class="collapse-item <?=(Yii::$app->controller->route == 'site/buttons') ? 'active' : '' ?>"
                             href="<?= Url::toRoute('site/buttons') ?>">Buttons</a>
                         <a class="collapse-item <?=(Yii::$app->controller->route == 'site/cards') ? 'active' : '' ?>"
