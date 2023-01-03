@@ -4,6 +4,7 @@
 /** @var string $content */
 
 use app\assets\SbAdminAsset;
+use app\helpers\LangLinkModifier;
 use yii\helpers\BaseStringHelper;
 use yii\helpers\Url;
 use app\widgets\Alert;
@@ -193,7 +194,7 @@ SbAdminAsset::register($this);
                     <ul class="navbar-nav ml-auto">
                         <li>
                             <a class="nav-link mt-3 font-weight-bold"
-                                href="<?= Url::toRoute('/ar/' . BaseStringHelper::explode(Yii::$app->controller->route, '/')[1]) ?>">عربي</a>
+                                href="<?= LangLinkModifier::toArabicUrl() ?>">عربي</a>
                         </li>
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">

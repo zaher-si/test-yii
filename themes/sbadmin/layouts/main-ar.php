@@ -6,12 +6,13 @@
 use app\assets\SbAdminAssetAr;
 use yii\helpers\Url;
 use yii\helpers\BaseStringHelper;
-// use app\components\LangLinkModifier;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\ButtonDropdown;
+use app\helpers\LangLinkModifier;
 
 
 SbAdminAssetAr::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -199,7 +200,7 @@ SbAdminAssetAr::register($this);
                     <ul class="navbar-nav ml-auto">
                         <li>
                             <a class="nav-link mt-3 font-weight-bold"
-                                href="<?= Url::toRoute('/site/' . BaseStringHelper::explode(Yii::$app->controller->route, '/')[1]) ?>">English</a>
+                                href="<?= LangLinkModifier::toEnglishUrl() ?>">English</a>
                         </li>
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
