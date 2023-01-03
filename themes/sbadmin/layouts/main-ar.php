@@ -5,7 +5,8 @@
 
 use app\assets\SbAdminAssetAr;
 use yii\helpers\Url;
-
+use yii\helpers\BaseStringHelper;
+// use app\components\LangLinkModifier;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\ButtonDropdown;
 
@@ -48,9 +49,10 @@ SbAdminAssetAr::register($this);
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?= Yii::$app->homeUrl ?>">
+                <a class="nav-link" href="<?= Url::toRoute('/ar') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>اللوحة الرئيسية</span></a>
+
             </li>
 
             <!-- Divider -->
@@ -69,14 +71,14 @@ SbAdminAssetAr::register($this);
                     <span>المكونات</span>
                 </a>
                 <div id="collapseTwo"
-                    class="collapse <?=(Yii::$app->controller->route == 'site/buttons' || Yii::$app->controller->route == 'site/cards') ? 'show' : '' ?>"
+                    class="collapse <?=(Yii::$app->controller->route == 'ar/buttons' || Yii::$app->controller->route == 'ar/cards') ? 'show' : '' ?>"
                     aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">مكونات مخصصة:</h6>
-                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/buttons') ? 'active' : '' ?>"
-                            href="<?= Url::toRoute('site/buttons') ?>">Buttons</a>
-                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/cards') ? 'active' : '' ?>"
-                            href="<?= Url::toRoute('site/cards') ?>">Cards</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'ar/buttons') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('ar/buttons') ?>">أزرار</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'ar/cards') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('ar/cards') ?>">بطاقات</a>
                     </div>
                 </div>
             </li>
@@ -86,21 +88,21 @@ SbAdminAssetAr::register($this);
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>أدوات</span>
                 </a>
                 <div id="collapseUtilities"
-                    class="collapse <?=(Yii::$app->controller->route == 'site/utilities-color' || Yii::$app->controller->route == 'site/utilities-border' || Yii::$app->controller->route == 'site/utilities-animation' || Yii::$app->controller->route == 'site/utilities-other') ? 'show' : '' ?>"
+                    class="collapse <?=(Yii::$app->controller->route == 'ar/utilities-color' || Yii::$app->controller->route == 'ar/utilities-border' || Yii::$app->controller->route == 'ar/utilities-animation' || Yii::$app->controller->route == 'ar/utilities-other') ? 'show' : '' ?>"
                     aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/utilities-color') ? 'active' : '' ?>"
-                            href="<?= Url::toRoute('site/utilities-color') ?>">Colors</a>
-                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/utilities-border') ? 'active' : '' ?>"
-                            href="<?= Url::toRoute('site/utilities-border') ?>">Borders</a>
-                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/utilities-animation') ? 'active' : '' ?>"
-                            href="<?= Url::toRoute('site/utilities-animation') ?>">Animations</a>
-                        <a class="collapse-item <?=(Yii::$app->controller->route == 'site/utilities-other') ? 'active' : '' ?>"
-                            href="<?= Url::toRoute('site/utilities-other') ?>">Other</a>
+                        <h6 class="collapse-header">أدوات مخصصة:</h6>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'ar/utilities-color') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('ar/utilities-color') ?>">الألوان</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'ar/utilities-border') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('ar/utilities-border') ?>">الحدود</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'ar/utilities-animation') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('ar/utilities-animation') ?>">الحركات</a>
+                        <a class="collapse-item <?=(Yii::$app->controller->route == 'ar/utilities-other') ? 'active' : '' ?>"
+                            href="<?= Url::toRoute('ar/utilities-other') ?>">غيرها</a>
                     </div>
                 </div>
             </li>
@@ -110,7 +112,7 @@ SbAdminAssetAr::register($this);
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                إضافات
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -118,34 +120,34 @@ SbAdminAssetAr::register($this);
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>صفحات</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/login') ?>">Login</a>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/register') ?>">Register</a>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/forgot-password') ?>">Forgot Password</a>
+                        <h6 class="collapse-header">شاشات تسجيل الدخول:</h6>
+                        <a class="collapse-item" href="<?= Url::toRoute('ar/login') ?>">تسجيل الدخول</a>
+                        <a class="collapse-item" href="<?= Url::toRoute('ar/register') ?>">حساب جديد</a>
+                        <a class="collapse-item" href="<?= Url::toRoute('ar/forgot-password') ?>">نسيت كلمة المرور</a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/404') ?>">404 Page</a>
-                        <a class="collapse-item" href="<?= Url::toRoute('site/blank') ?>">Blank Page</a>
+                        <h6 class="collapse-header">صفحات أخرى:</h6>
+                        <a class="collapse-item" href="<?= Url::toRoute('ar/404') ?>">404 صفحة</a>
+                        <a class="collapse-item" href="<?= Url::toRoute('ar/blank') ?>">صفحة فارغة</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= Url::toRoute('site/charts') ?>">
+                <a class="nav-link" href="<?= Url::toRoute('ar/charts') ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <span>مخططات بيانية</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= Url::toRoute('site/tables') ?>">
+                <a class="nav-link" href="<?= Url::toRoute('ar/tables') ?>">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>جداول</span></a>
             </li>
 
             <!-- Divider -->
@@ -176,7 +178,7 @@ SbAdminAssetAr::register($this);
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="بحث عن..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
@@ -189,26 +191,10 @@ SbAdminAssetAr::register($this);
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <?php
-                        Yii::$app->language = 'en';
-                        $languageItem = new cetver\LanguageSelector\items\DropDownLanguageItem([
-                            'languages' => [
-                                'en' => '<span class="flag-icon flag-icon-us"></span> English',
-                                'ar' => '<span class="flag-icon flag-icon-sa"></span> عربي',
-                            ],
-                            'options'   => ['encode' => false],
-                        ]);
-                        $languageItem = $languageItem->toArray();
-                        $languageDropdownItems = \yii\helpers\ArrayHelper::remove($languageItem, 'items');
-                        echo ButtonDropdown::widget([
-                            'label'       => $languageItem['label'],
-                            'encodeLabel' => false,
-                            'options'     => ['class' => 'btn-default py-2'],
-                            'dropdown'    => [
-                                'items' => $languageDropdownItems
-                            ]
-                        ]);
-                        ?>
+                        <li>
+                            <a class="nav-link mt-3 font-weight-bold"
+                                href="<?= Url::toRoute('/site/' . BaseStringHelper::explode(Yii::$app->controller->route, '/')[1]) ?>">English</a>
+                        </li>
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
@@ -221,8 +207,7 @@ SbAdminAssetAr::register($this);
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                            placeholder="بحث عن..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -428,7 +413,7 @@ SbAdminAssetAr::register($this);
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= Url::toRoute('site/login') ?>">Logout</a>
+                    <a class="btn btn-primary" href="<?= Url::toRoute('ar/login') ?>">Logout</a>
                 </div>
             </div>
         </div>

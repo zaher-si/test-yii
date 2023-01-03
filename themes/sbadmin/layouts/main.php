@@ -4,6 +4,7 @@
 /** @var string $content */
 
 use app\assets\SbAdminAsset;
+use yii\helpers\BaseStringHelper;
 use yii\helpers\Url;
 use app\widgets\Alert;
 use yii\bootstrap4\Breadcrumbs;
@@ -190,26 +191,10 @@ SbAdminAsset::register($this);
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <?php
-                        Yii::$app->language = 'en';
-                        $languageItem = new cetver\LanguageSelector\items\DropDownLanguageItem([
-                            'languages' => [
-                                'en' => '<span class="flag-icon flag-icon-us"></span> English',
-                                'ar' => '<span class="flag-icon flag-icon-sa"></span> عربي',
-                            ],
-                            'options'   => ['encode' => false],
-                        ]);
-                        $languageItem = $languageItem->toArray();
-                        $languageDropdownItems = \yii\helpers\ArrayHelper::remove($languageItem, 'items');
-                        echo ButtonDropdown::widget([
-                            'label'       => $languageItem['label'],
-                            'encodeLabel' => false,
-                            'options'     => ['class' => 'btn-default py-2'],
-                            'dropdown'    => [
-                                'items' => $languageDropdownItems
-                            ]
-                        ]);
-                        ?>
+                        <li>
+                            <a class="nav-link mt-3 font-weight-bold"
+                                href="<?= Url::toRoute('/ar/' . BaseStringHelper::explode(Yii::$app->controller->route, '/')[1]) ?>">عربي</a>
+                        </li>
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
