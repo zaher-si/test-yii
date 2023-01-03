@@ -23,6 +23,12 @@ SbAdminAssetAr::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <style>
+        .sidebar .nav-item .nav-link[data-toggle=collapse].collapsed::after {
+            content: '\f105';
+            rotate: 180deg;
+        }
+    </style>
 </head>
 
 <body id="page-top">

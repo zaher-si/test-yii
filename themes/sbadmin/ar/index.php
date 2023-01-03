@@ -26,7 +26,7 @@ $this->title = 'Illaf Training Program';
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Earnings (Monthly)
+                                الإيرادات (شهرياً)
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 $40,000
@@ -47,7 +47,7 @@ $this->title = 'Illaf Training Program';
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Earnings (Annual)
+                                الإيرادات (سنوياً)
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 $215,000
@@ -68,7 +68,7 @@ $this->title = 'Illaf Training Program';
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Tasks
+                                المهام
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
@@ -99,7 +99,7 @@ $this->title = 'Illaf Training Program';
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Pending Requests
+                                طلبات معلقة
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 18
@@ -123,7 +123,7 @@ $this->title = 'Illaf Training Program';
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">
-                        Earnings Overview
+                        مراجعة الإيرادات
                     </h6>
                     <div class="dropdown no-arrow">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
@@ -132,7 +132,7 @@ $this->title = 'Illaf Training Program';
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                             aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Dropdown Header:</div>
+                            <div class="dropdown-header">ترويسة قائمة منسدلة:</div>
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <div class="dropdown-divider"></div>
@@ -155,7 +155,7 @@ $this->title = 'Illaf Training Program';
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">
-                        Revenue Sources
+                        مصادر الإيرادات
                     </h6>
                     <div class="dropdown no-arrow">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
@@ -200,7 +200,7 @@ $this->title = 'Illaf Training Program';
             <!-- Project Card Example -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">المشاريع</h6>
                 </div>
                 <div class="card-body">
                     <h4 class="small font-weight-bold">
@@ -315,7 +315,7 @@ $this->title = 'Illaf Training Program';
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">
-                        Illustrations
+                        الرسومات التوضيحية
                     </h6>
                 </div>
                 <div class="card-body">
@@ -339,7 +339,7 @@ $this->title = 'Illaf Training Program';
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">
-                        Development Approach
+                        نهج التطوير
                     </h6>
                 </div>
                 <div class="card-body">

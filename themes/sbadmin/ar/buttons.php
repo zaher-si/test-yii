@@ -86,7 +86,7 @@ $this->title = 'صفحة الازرار';
             <!-- Brand Buttons -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Brand Buttons</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">أزرار علامات تجارية</h6>
                 </div>
                 <div class="card-body">
                     <p>Google and Facebook buttons are available featuring each company's respective brand color. They
@@ -111,7 +111,7 @@ $this->title = 'صفحة الازرار';
 
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Split Buttons with Icon</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">أزرار منقسمة مع أيقونات</h6>
                 </div>
                 <div class="card-body">
                     <p>Works with any button colors, just use the <code>.btn-icon-split</code> class and the markup in
