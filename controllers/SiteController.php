@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -109,17 +110,44 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail']))
+        if ($model->load(Yii::$app->request->post()) && $model->validate())
         {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
+            return $this->render('contact-confirm', ['model' => $model]);
         }
         return $this->render('contact', [
             'model' => $model,
         ]);
     }
 
+    public function actionCity()
+    {
+        $countryList = file_get_contents('countries.min.json');
+        $clist = json_decode($countryList, true);
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $out = [];
+        if (isset($_POST['depdrop_parents']))
+        {
+            $parents = $_POST['depdrop_parents'];
+            if ($parents != null)
+            {
+                $cat_id = $parents[0];
+                $result_array = ArrayHelper::getValue($clist, $cat_id);
+                foreach ($result_array as $value)
+                {
+                    $out[] = ['id' => $value, 'name' => $value];
+                }
+                ;
+                // the getSubCatList function will query the database based on the
+                // cat_id and return an array like below:
+                // [
+                //    ['id'=>'<sub-cat-id-1>', 'name'=>'<sub-cat-name1>'],
+                //    ['id'=>'<sub-cat_id_2>', 'name'=>'<sub-cat-name2>']
+                // ]
+                return ['output' => $out, 'selected' => ''];
+            }
+        }
+        return ['output' => '', 'selected' => ''];
+    }
     /**
      * Displays about page.
      *

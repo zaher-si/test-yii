@@ -6,63 +6,70 @@
 
 use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html;
-use yii\captcha\Captcha;
+use kartik\depdrop\DepDrop;
+use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
+
+$catList = [
+    1 => 'Electronics',
+    2 => 'Books',
+    3 => 'Home & Kitchen'
+];
 
 $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
+
+$countryList = file_get_contents('countries.min.json');
+// print_r(json_decode($countryList));
+$clist = json_decode($countryList, true);
+$newlist = array_combine(array_keys($clist), array_keys($clist));
 ?>
 <div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1>
+        <?= Html::encode($this->title) ?>
+    </h1>
 
-    <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
-        <div class="alert alert-success">
-            Thank you for contacting us. We will respond to you as soon as possible.
-        </div>
+    <p>
+        If you have business inquiries or other questions, please fill out the following form to contact us.
+        Thank you.
+    </p>
 
-        <p>
-            Note that if you turn on the Yii debugger, you should be able
-            to view the mail message on the mail panel of the debugger.
-            <?php if (Yii::$app->mailer->useFileTransport): ?>
-                Because the application is in development mode, the email is not sent but saved as
-                a file under <code><?= Yii::getAlias(Yii::$app->mailer->fileTransportPath) ?></code>.
-                Please configure the <code>useFileTransport</code> property of the <code>mail</code>
-                application component to be false to enable email sending.
-            <?php endif; ?>
-        </p>
+    <div class="row">
+        <div class="col-lg-5">
 
-    <?php else: ?>
+            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
-        <p>
-            If you have business inquiries or other questions, please fill out the following form to contact us.
-            Thank you.
-        </p>
+            <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
-        <div class="row">
-            <div class="col-lg-5">
+            <?= $form->field($model, 'mobile') ?>
+            <?= $form->field($model, 'country')->dropDownList($newlist, ['id' => 'country-id'])->label('Country'); ?>
+            <?= $form->field($model, 'city')->widget(DepDrop::classname(), [
+                'options'       => ['id' => 'city-id'],
+                'pluginOptions' => [
+                    'depends'     => ['country-id'],
+                    'placeholder' => 'Select...',
+                    'url'         => Url::to(['/site/city'])
+                ]
+            ])->label('City');
+            ?>
 
-                <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+            <?= $form->field($model, 'email') ?>
 
-                    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+            <?= $form->field($model, 'subject') ?>
 
-                    <?= $form->field($model, 'email') ?>
+            <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
-                    <?= $form->field($model, 'subject') ?>
+            <?= $form->field($model, 'reCaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha2::className()) ?>
 
-                    <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
-
-                    <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                    ]) ?>
-
-                    <div class="form-group">
-                        <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-                    </div>
-
-                <?php ActiveForm::end(); ?>
-
+            <div class="form-group">
+                <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
             </div>
-        </div>
 
-    <?php endif; ?>
+            <?php ActiveForm::end(); ?>
+
+        </div>
+    </div>
+
+
 </div>

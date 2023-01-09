@@ -42,6 +42,11 @@ $config = [
                 ],
             ],
         ],
+        'reCaptcha'    => [
+            'class'     => 'himiklab\yii2\recaptcha\ReCaptchaConfig',
+            'siteKeyV2' => '6Lea2OMjAAAAAI1RFEVMjEDHaEtg5g7jOrfgpPI9',
+            'secretV2'  => '6Lea2OMjAAAAAOIr7qzkfN2_uHlA7SlJXjgdieU9',
+        ],
         'db'           => $db,
 
         'urlManager'   => [
