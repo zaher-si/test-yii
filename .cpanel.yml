@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/zaher/public_html
+    - export DEPLOYPATH=/home/zaher/public_html/tz1
     - /bin/cp -R ./ $DEPLOYPATH
