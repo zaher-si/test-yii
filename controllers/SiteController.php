@@ -157,6 +157,11 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+    public function actionAboutAr()
+    {
+        $this->layout = 'main-ar.php';
+        return $this->render('aboutar');
+    }
 
 
     public function actionSay($message = 'Hello')

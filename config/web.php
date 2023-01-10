@@ -53,7 +53,9 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName'  => false,
             'rules'           => [
-                '<alias:\w+>' => 'site/<alias>',
+                'حولنا'       => 'site/about-ar',
+                'about-us'    => 'site/about',
+                "<alias:\w+>" => "site/<alias>",
             ],
         ],
 
