@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
+use himiklab\yii2\recaptcha\ReCaptchaValidator2;
 
 /**
  * ContactForm is the model behind the contact form.
@@ -40,7 +41,7 @@ class ContactForm extends Model
             [['name'], 'string', 'min' => 2, 'message' => 'Please enter at least 2 letters'],
             [['mobile'], 'string', 'length' => 12, 'message' => 'Please enter 12 digits'],
             [['mobile'], 'match', 'pattern' => '/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/'],
-            ['reCaptcha', \himiklab\yii2\recaptcha\ReCaptchaValidator2::className(), 'secret' => '6Lea2OMjAAAAAOIr7qzkfN2_uHlA7SlJXjgdieU9',
+            ['reCaptcha', ReCaptchaValidator2::className(), 'secret' => '6Lea2OMjAAAAAOIr7qzkfN2_uHlA7SlJXjgdieU9',
                 'uncheckedMessage' => 'Please confirm that you are not a bot.'],
 
         ];
